@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const bodParser = require("body-parser");
 // const authRoutes = require("./routes/auth-routes");
-// const homeRoutes = require("./routes/home-routes");
+const homeRoutes = require("./routes/home-routes");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(bodParser.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(homeRoutes.routes);
-app.use(authRoutes.routes);
+// app.use(authRoutes.routes);
 
 app.listen(3000, () =>
   console.log("App is listening on url http://localhost:3000")
